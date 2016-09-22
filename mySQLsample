@@ -1,0 +1,56 @@
+mysql> create table if not exists Employee ( Name varchar(50), Salary int, Manager varchar(50), Department varchar(50));
+		mysql> load data local infile 'H:/DataScience/TanysCourse/homework/employee_extra_data.txt' into table Employee;
+		
+		mysql> SHOW TABLES;
+		mysql> DESCRIBE employee;
+		
+		mysql> SELECT Name, Salary, Department
+    -> FROM employee
+    -> LIMIT 10;
+
+    mysql> SELECT Name, Salary, Department
+    -> FROM employee
+    -> ORDER BY Name ASC
+    -> LIMIT 10;
+		
+		
+		mysql> SELECT Name, Salary, Department
+    -> FROM employee
+    -> ORDER BY Department ASC, Salary ASC
+    -> LIMIT 10;
+		
+		
+		How many employees in Finance? 
+		
+		mysql>SELECT COUNT(Name)
+    -> FROM employee
+    -> WHERE Department = 'Finance';
+		
+		
+		how many employees are there in total?
+		
+		mysql> SELECT COUNT(Name) FROM employee;
+		
+		
+		
+		What does that one do? 
+		
+		mysql> SELECT Salary, Department, COUNT(Department) 
+    -> FROM employee
+    -> GROUP BY Department
+    -> ORDER BY Salary DESC
+		
+		
+    mysql> SELECT Name FROM Employee WHERE Department like 'Software';
+		
+		
+		what is the difference between these two?
+		
+		mysql> SELECT COUNT(DISTINCT Manager) FROM Employee;
+		mysql> SELECT COUNT(Manager) FROM Employee;
+		
+		
+	  what does that one do?
+		mysql> SELECT * FROM Employee WHERE Department = 'Finance' AND salary >= 10000;
+		
+		mysql> select E.Name from Employee as E, Employee as M where E.Manager = M.Name and (M.Salary - E.Salary) >= 10000;
