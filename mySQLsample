@@ -1,20 +1,20 @@
 mysql> create table if not exists Employee ( Name varchar(50), Salary int, Manager varchar(50), Department varchar(50));
 		mysql> load data local infile 'H:/DataScience/TanysCourse/homework/employee_extra_data.txt' into table Employee;
 		
-		mysql> SHOW TABLES;
-		mysql> DESCRIBE employee;
+mysql> SHOW TABLES;
+mysql> DESCRIBE employee;
 		
-		mysql> SELECT Name, Salary, Department
+mysql> SELECT Name, Salary, Department
     -> FROM employee
     -> LIMIT 10;
 
-    mysql> SELECT Name, Salary, Department
+  mysql> SELECT Name, Salary, Department
     -> FROM employee
     -> ORDER BY Name ASC
     -> LIMIT 10;
 		
 		
-		mysql> SELECT Name, Salary, Department
+   mysql> SELECT Name, Salary, Department
     -> FROM employee
     -> ORDER BY Department ASC, Salary ASC
     -> LIMIT 10;
@@ -22,7 +22,7 @@ mysql> create table if not exists Employee ( Name varchar(50), Salary int, Manag
 		
 		How many employees in Finance? 
 		
-		mysql>SELECT COUNT(Name)
+ mysql>SELECT COUNT(Name)
     -> FROM employee
     -> WHERE Department = 'Finance';
 		
